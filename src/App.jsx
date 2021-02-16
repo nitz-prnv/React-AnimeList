@@ -9,9 +9,8 @@ const api = require('gogoanime');
  const App=()=>{
 
 const[search,setsearch]=useState('');
-const [query,setQuery]=useState('naruto');
+const [query,setQuery]=useState('');
 const[Lists,setlist]=useState([])
-const rate =['r','rx']
 useEffect(()=>{
   getAnime();
   getY();
@@ -19,7 +18,7 @@ useEffect(()=>{
 },[query])
 
 const getAnime = async ()=>{
-  const response= await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}&rated=${rate}`);
+  const response= await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}&order_by=members&genre=0&genre_exclude=12`);
   const data = await response.json();
   setlist(data.results);
   
