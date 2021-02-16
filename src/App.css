@@ -1,7 +1,16 @@
 .App {
   text-align: center;
-}
+ max-width: 100%;
 
+
+}
+ .container{
+    flex-direction: row;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
