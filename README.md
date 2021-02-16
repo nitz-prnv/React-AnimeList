@@ -1,2 +1,1 @@
-##REACT ANIMELIST
- #no description available
+no description available
