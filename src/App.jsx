@@ -4,8 +4,6 @@ import  {TextField} from '@material-ui/core';
 import Anime from './contaainer/Anime';
 import './App.css';
 
-const api = require('gogoanime');
-
  const App=()=>{
 
 const[search,setsearch]=useState('');
@@ -13,7 +11,6 @@ const [query,setQuery]=useState('');
 const[Lists,setlist]=useState([])
 useEffect(()=>{
   getAnime();
-  getY();
   // eslint-disable-next-line react-hooks/exhaustive-deps
 },[query])
 
@@ -21,12 +18,6 @@ const getAnime = async ()=>{
   const response= await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}&order_by=members&genre=0&genre_exclude=12`);
   const data = await response.json();
   setlist(data.results);
-  
-}
-const getY = async ()=>{
-  const response= await api.animeEpisodeHandler('actors-songs-connection-episode-9')
-  const data = await response.json();
-  console.log(data);
   
 }
 
